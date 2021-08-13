@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/parqueadero"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ingresar vehiculo al parqueadero</ion-card-title>
+    </ion-card-header>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title> Registro de ingreso del vehiculo </ion-card-title>
+      </ion-card-header>
+      <img src="https://www.elcarrocolombiano.com/wp-content/uploads/2021/02/20210208-TOP-75-CARROS-MAS-VENDIDOS-DE-COLOMBIA-EN-ENERO-2021-01.jpg" alt="">
+    </ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Placa del vehiculo</ion-label>
+        <ion-input #placa></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>tipo Vehiculo</ion-label>
+        <ion-select placeholder="tipo Vehiculo" #tipoVehiculo>
+          <ion-select-option value="1">moto</ion-select-option>
+          <ion-select-option value="2">camioneta</ion-select-option>
+          <ion-select-option value="3">vehiculo deportivo</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button color="primary" expand="full"(click)="saveVehiculo(placa,tipoVehiculo)">Guardar</ion-button>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

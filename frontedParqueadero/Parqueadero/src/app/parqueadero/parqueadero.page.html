@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>parqueadero</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor= "let parque of parqueaderoo">
+    <ion-card-header>
+      <ion-card-title> Placa del vehiculo es : {{parque.placa}}</ion-card-title>
+      <ion-card-subtitle>la latitud es : {{ lat }} </ion-card-subtitle>
+      <ion-card-subtitle>la longitud  es : {{ lon }} </ion-card-subtitle>
+    </ion-card-header>
+    <img src="https://www.elcarrocolombiano.com/wp-content/uploads/2021/02/20210208-TOP-75-CARROS-MAS-VENDIDOS-DE-COLOMBIA-EN-ENERO-2021-01.jpg" alt="">
+    <ion-card-content>
+      el tipo del vehiculo es : {{parque.typesVehicle.type}}
+      , la hora de ingreso es :{{parque.updatedAt}}
+      , el vehiculo esta en la posicion: {{parque.ParqueaderId}} del parqueadero
+    </ion-card-content>
+      <ion-button color="secondary" [routerLink]="['/','exit-vehicle',parque.id]"
+                  expand="full" (click)="editVehiculo(parque.placa)">sacar el vehiculo del parqueadero</ion-button>
+
+  </ion-card>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="success" routerLink="/parqueadero-form">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
